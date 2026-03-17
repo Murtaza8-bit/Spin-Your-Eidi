@@ -2,7 +2,7 @@
 
 A responsive and interactive Eid experience built using HTML, CSS, and JavaScript. Users open a festive Eid envelope, receive a greeting card, spin a wheel to reveal their Eidi amount, and claim it instantly via WhatsApp!
 
-### 🔗 [Click Here to Play](https://yourusername.github.io/eid-surprise-wheel/)
+### 🔗 [Click Here to Play](https://murtaza8-bit.github.io/eid-surprise-wheel/)
 
 ---
 
