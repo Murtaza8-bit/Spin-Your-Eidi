@@ -278,10 +278,25 @@ function pickSeg() {
 
 let spun = localStorage.getItem('eidSpun') === 'true', curAngle = 0;
 
+// On page load, if already spun — show result immediately
+window.addEventListener('load', () => {
+  const saved = localStorage.getItem('eidResult');
+  if (saved) {
+    const seg = JSON.parse(saved);
+    goTo('s2'); // skip to greeting briefly
+    setTimeout(() => {
+      goTo('s3');
+      requestAnimationFrame(() => { sizeWheel(); drawWheel(0); });
+      setTimeout(() => showResult(seg), 500);
+    }, 100);
+  }
+});
+
 function spinWheel() {
   if (spun) return;
   spun = true;
   localStorage.setItem('eidSpun', 'true');
+  localStorage.setItem('eidResult', JSON.stringify(SEGS[wi]));
 
   const btn = document.getElementById('spinBtn');
   btn.disabled    = true;
