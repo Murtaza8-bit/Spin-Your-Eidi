@@ -271,9 +271,9 @@ function pickSeg() {
   let sum = 0;
   for (let i = 0; i < w.length; i++) {
     sum += w[i];
-    if (r < sum) return i;
+    if (r <= sum) return i;
   }
-  return N - 1;
+  return w.indexOf(Math.max(...w));
 }
 
 let spun = false, curAngle = 0;
